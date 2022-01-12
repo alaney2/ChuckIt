@@ -1,12 +1,13 @@
 {
   "name": "Getting Started Example",
+  "author": "Alan Yao",
   "description": "Build an Extension!",
-  "version": "1.0",
+  "version": "1.0.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -22,5 +23,5 @@
     "48": "/images/get_started48.png",
     "128": "/images/get_started128.png"
   },
-  "options_page": "options.html"
+  "__options_page__": "options.html"
 }
