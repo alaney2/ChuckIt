@@ -24,7 +24,7 @@ likeButton.addEventListener("click", async () => {
 
   connection.query(insertwebsite, `${website}`, (err, results, fields)=>{
     if(err) return console.error(err.message);
-    insert_id = results.insertid;
+    insert_id = results.insertId;
   });
 });
 
