@@ -1,0 +1,23 @@
+{
+  "name": "chuckit-extension",
+  "version": "1.0.0",
+  "description": "test connection",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaney2/chuckit-extension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alaney2/chuckit-extension/issues"
+  },
+  "homepage": "https://github.com/alaney2/chuckit-extension#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
