@@ -1,0 +1,37 @@
+{
+  "name": "cra-template-browser-extension",
+  "version": "1.1.0",
+  "keywords": [
+    "react",
+    "create-react-extension",
+    "template"
+  ],
+  "description": "The base template for Create React Browser Extension.",
+  "main": "template.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VasilyShelkov/create-react-extension",
+    "directory": "packages/cra-template"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/VasilyShelkov/create-react-extension/issues"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "eslintConfig": {
+    "extends": ["react-app", "react-app/jest"],
+    "rules": {
+      "no-unused-vars": "off"
+    }
+  },
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
