@@ -7,8 +7,18 @@ let dislikeButton = document.getElementById("dislike");
 
 chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
   let url = tabs[0].url;
-  website.innerHTML += url;
-  // use `url` here inside the callback because it's asynchronous!
+  let domain = "";
+  let encounteredPeriod = false;
+  for (let char of url) {
+    if (char === '.') encounteredPeriod = true;
+    if (char === '/' && encounteredPeriod) break;
+    domain += char;
+  }
+  if (domain === 'https://www.youtube.com') {
+    website.innerHTML += url;
+  } else {
+    website.innerHTML += domain;
+  }
 });
 
 // When the button is clicked, inject setPageBackgroundColor into current page
