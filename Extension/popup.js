@@ -5,6 +5,24 @@ let likeButton = document.getElementById("like");
 let neutralButton = document.getElementById("meh");
 let dislikeButton = document.getElementById("dislike");
 
+let mysql = require('mysql2');
+let config = require('../Database/config.js');
+let connection = mysql.createConnection(config);
+
+connection.connect(function(err) {
+  if(err) {
+    return console.error('error: ' + err.message);
+  }
+  console.log('Connected to the MySQL server.');
+});
+
+likeButton.addEventListener("click", async () => {
+  //insert SQL statements
+  let insertwebsite = `   INSERT INTO websites(url)
+                        VALUES(${website});       `;
+  connection.query(insertwebsite);
+});
+
 chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
   let url = tabs[0].url;
   let domain = "";
@@ -20,6 +38,15 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     website.innerHTML += domain;
   }
 });
+
+
+
+connection.end();
+
+
+
+
+
 
 // When the button is clicked, inject setPageBackgroundColor into current page
 // changeColor.addEventListener("click", async () => {
