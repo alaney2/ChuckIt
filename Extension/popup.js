@@ -8,6 +8,7 @@ let dislikeButton = document.getElementById("dislike");
 let mysql = require('mysql2');
 let config = require('../Database/config.js');
 let connection = mysql.createConnection(config);
+const insert_id;
 
 connection.connect(function(err) {
   if(err) {
@@ -18,9 +19,13 @@ connection.connect(function(err) {
 
 likeButton.addEventListener("click", async () => {
   //insert SQL statements
-  let insertwebsite = `   INSERT INTO websites(url)
-                        VALUES(${website});       `;
-  connection.query(insertwebsite);
+  let insertwebsite = ` INSERT INTO websites(url)
+                        VALUES(?);       `;
+
+  connection.query(insertwebsite, `${website}`, (err, results, fields)=>{
+    if(err) return console.error(err.message);
+    insert_id = results.insertid;
+  });
 });
 
 chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
