@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/alaney2/chuckit-extension#readme",
   "dependencies": {
+    "express": "^4.17.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3"
   }
