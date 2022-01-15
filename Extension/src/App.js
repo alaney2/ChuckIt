@@ -29,7 +29,6 @@ function App() {
       // chrome.storage.local.get(['domain', 'url'], function(result) {
       //   setDomain(result.domain);
       // });
-      
       const websites = await (await WebsiteDataService.findBySearch(domain)).data;
       console.log(websites, domain, 'DOMAINS');
       if (websites.length > 0) {
@@ -39,7 +38,6 @@ function App() {
           ...prevWebsite,
           url: domain
         }));
-        // setWebsite({ url: domain, likes: 0, neutrals: 0, dislikes: 0 });
       }
     };
     loadWebsite();
@@ -51,7 +49,6 @@ function App() {
       ...prevWebsite,
       likes: prevWebsite.likes + 1
     }));
-    // setWebsite({ ...website, likes: website.likes + 1 });
     handleClick(e);
   };
 
@@ -61,7 +58,6 @@ function App() {
       ...prevWebsite,
       neutrals: prevWebsite.neutrals + 1
     }));
-    // setWebsite({ ...website, neutrals: website.neutrals + 1 });
     handleClick(e);
   };
 
@@ -71,7 +67,6 @@ function App() {
       ...prevWebsite,
       dislikes: prevWebsite.dislikes + 1
     }));
-    // setWebsite({ ...website, dislikes: website.dislikes + 1 });
     handleClick(e);
   };
 
@@ -79,12 +74,6 @@ function App() {
     e.preventDefault();
     try {
       const id = website.id;
-      // const updatedSite = {
-      //   url: domain,
-      //   likes: website.likes,
-      //   neutrals: website.neutrals,
-      //   dislikes: website.dislikes
-      // };
       if (id) WebsiteDataService.update(id, website);
       else WebsiteDataService.create(website);
     } catch(err) {

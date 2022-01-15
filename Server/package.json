@@ -13,7 +13,6 @@
   "keywords": [
     "nodejs",
     "express",
-    "sequelize",
     "mysql",
     "rest",
     "api"
@@ -25,7 +24,6 @@
   },
   "homepage": "https://github.com/alaney2/ChuckIt#readme",
   "dependencies": {
-    "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",

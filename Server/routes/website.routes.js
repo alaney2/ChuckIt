@@ -6,6 +6,37 @@ module.exports = app => {
   // Create a new website
   router.post('/', websites.create);
 
+  // Same stuff without the other files
+  
+  // router.post('/', (req, res) => {
+  //   if (!req.body) {
+  //     res.status(400).send({
+  //       message: 'Content can not be empty!'
+  //     });
+  //   }
+  
+  //   const website = ({
+  //     url: req.body.url,
+  //     likes: req.body.likes,
+  //     neutrals: req.body.neutrals,
+  //     dislikes: req.body.dislikes
+  //   });
+
+  //   const sql = require('../models/db.js');
+  //   sql.query('INSERT INTO websites SET ?', website, (err, data) => {
+  //     if (err) {
+  //       console.error('error: ', err);
+  //       res.status(500).send({
+  //         message: err.message || 'Some error occurred while creating the website.'
+  //       });
+  //       return;
+  //     }
+
+  //     console.log('Created website: ', { id: data.insertId, ...website });
+  //     res.send(data);
+  //   });
+  // });
+
   // Retrieve all websites
   router.get('/', websites.findAll);
 
