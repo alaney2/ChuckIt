@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 /*global chrome*/
-// If your extension doesn't need a background script, just leave this file empty
+
+// If the extension doesn't need a background script, just leave this file empty
 
 // chrome.tabs.onActivated.addListener((activeInfo) => {
 //   chrome.tabs.get(activeInfo.tabId, (tab) => {
