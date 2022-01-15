@@ -1,9 +1,9 @@
 
 let config = {
-    host    : '127.0.0.1',
-    user    :'root',
-    password:'290629',
-    database:'chuckit_test'
+    host    : 'chuckitdb.cm1mkxsoffli.us-east-1.rds.amazonaws.com',
+    user    : 'root',
+    password: 'password123',
+    database: 'chuckitdb'
 };
 
 module.exports = config;
